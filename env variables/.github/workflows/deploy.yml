@@ -2,13 +2,13 @@ name: Deployment
 on:
   push:
     branches:
-      - main
-      - dev
+    - dev
 env:
   MONGODB_DB_NAME: <Database Name>
 jobs:
   
   test:
+    environment: testing
     env:
       MONGODB_CLUSTER_ADDRESS: <Cluster name>
       MONGODB_USERNAME: ${{secrets.MONGODB_USERNAME}}
